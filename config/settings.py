@@ -54,12 +54,18 @@ class Settings:
 
     http_proxy: str = field(default_factory=lambda: os.getenv("HTTP_PROXY", ""))
     https_proxy: str = field(default_factory=lambda: os.getenv("HTTPS_PROXY", ""))
+    proxy_file: str = field(default_factory=lambda: os.getenv("PROXY_FILE", ""))  # 代理列表文件路径
 
     database_url: str = field(
         default_factory=lambda: os.getenv("DATABASE_URL", f"sqlite:///{DATA_DIR / 'arbitrage.db'}")
     )
     log_level: str = field(default_factory=lambda: os.getenv("LOG_LEVEL", "INFO"))
     use_mock_data: bool = field(default_factory=lambda: _env_bool("USE_MOCK_DATA", True))
+    use_stealth: bool = field(default_factory=lambda: _env_bool("USE_STEALTH", True))  # playwright-stealth
+
+    # 调度器配置
+    schedule_enabled: bool = field(default_factory=lambda: _env_bool("SCHEDULE_ENABLED", False))
+    schedule_cron: str = field(default_factory=lambda: os.getenv("SCHEDULE_CRON", "0 8 * * *"))  # 默认每天早8点
 
     platform: PlatformConfig = field(default_factory=PlatformConfig)
     profit: ProfitConfig = field(default_factory=ProfitConfig)
