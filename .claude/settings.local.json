@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install *)",
+      "Bash(python -c \"import playwright; print\\('playwright version:', playwright.__version__\\)\")",
+      "Bash(python -m playwright install --help)",
+      "Bash(pip3 install *)",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('/mnt/d/code/Best-Seller-Search-Engine/config/proxy.py'\\).read\\(\\)\\); print\\('proxy.py: OK'\\)\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('/mnt/d/code/Best-Seller-Search-Engine/scrapers/base.py'\\).read\\(\\)\\); print\\('base.py: OK'\\)\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('/mnt/d/code/Best-Seller-Search-Engine/scrapers/amazon.py'\\).read\\(\\)\\); print\\('amazon.py: OK'\\)\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('/mnt/d/code/Best-Seller-Search-Engine/scrapers/temu.py'\\).read\\(\\)\\); print\\('temu.py: OK'\\)\")",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('/mnt/d/code/Best-Seller-Search-Engine/scheduler.py'\\).read\\(\\)\\); print\\('scheduler.py: OK'\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(rm -rf config/__pycache__ config/*.pyc)",
+      "Bash(python3 -m pytest tests/test_profit.py -q)",
+      "Bash(python3 main.py --platforms amazon --limit 3 --offers 2)",
+      "Bash(python3 scheduler.py --once --limit 3 --offers 2)",
+      "Bash(python3 scheduler.py --once-amazon --limit 3 --offers 2)",
+      "Bash(python *)",
+      "Bash(python3 *)"
+    ]
+  }
+}
